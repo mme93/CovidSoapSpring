@@ -23,33 +23,32 @@ public class CovidSoapRepository {
                 return covid;
             case "/infection":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getNewInfectionsLastDayJHU()+"");
+                covid.setJsonInfo( new JSONObject().put("value",String.valueOf(calculateCovidNumber.getNewInfectionsLastDayJHU())).toString());
                 return covid;
             case "/infected":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getTotalInfectionsJHU()+"");
+                covid.setJsonInfo(new JSONObject().put("value",String.valueOf(calculateCovidNumber.getTotalInfectionsJHU())).toString());
                 return covid;
             case "/increase":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getIncreaseLasteDayJHU()+"");
+                covid.setJsonInfo(new JSONObject().put("value",String.valueOf(calculateCovidNumber.getIncreaseLasteDayJHU())).toString());
             return covid;
             case "/average":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getAverageIncreaseDayJHU(nDays)+"");
+                covid.setJsonInfo(new JSONObject().put("value",String.valueOf(calculateCovidNumber.getAverageIncreaseDayJHU(nDays))).toString());
                 return covid;
             case "/incidencevalue":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getRWerthTotalGermanyRKI()+"");
+                covid.setJsonInfo(new JSONObject().put("value",String.valueOf(calculateCovidNumber.getRWerthTotalGermanyRKI())).toString());
                 return covid;
             case "/incidencegoal":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getTotalTargetInfectionRKI(rValue)+"");
+                covid.setJsonInfo(new JSONObject().put("value",calculateCovidNumber.getTotalTargetInfectionRKI(rValue)).toString());
                 return covid;
             case "/days":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getTargetIncidenceForRWerthRKI(rValue,calculateCovidNumber.getTotalInfectionsJHU(),nDays)+"");
+                covid.setJsonInfo(new JSONObject().put("value",String.valueOf(calculateCovidNumber.getTargetIncidenceForRWerthRKI(rValue,calculateCovidNumber.getTotalInfectionsJHU(),nDays))).toString());
                 return covid;
-
             default:
                 covid = new Covid();
                 covid.setJsonInfo("Tut mir leid, diesen Befehl verstehe ich nicht.");
