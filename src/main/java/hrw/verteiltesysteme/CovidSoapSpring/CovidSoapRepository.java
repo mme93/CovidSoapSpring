@@ -19,8 +19,7 @@ public class CovidSoapRepository {
         switch (info) {
             case "/date":
                 covid = new Covid();
-                //covid.setJsonInfo(new JSONObject(calculateCovidNumber.getGermanyInfoJHU().get(calculateCovidNumber.getGermanyInfoJHU().size()-1).getDate()).toString());
-                covid.setJsonInfo(new JSONObject().put("value","Test").toString());
+                covid.setJsonInfo(new JSONObject().put("value",calculateCovidNumber.getGermanyInfoJHU().get(calculateCovidNumber.getGermanyInfoJHU().size()-1).getDate()).toString());
                 return covid;
             case "/infection":
                 covid = new Covid();
