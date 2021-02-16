@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.3.2 generiert 
 // Siehe <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2021.02.16 um 04:26:03 PM CET 
+// Generiert: 2021.02.16 um 06:13:42 PM CET 
 //
 
 
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="employee" type="{http://innova.com/models/soap/emp}covid"/&gt;
+ *         &lt;element name="covid" type="{http://innova.com/models/soap/emp}covid"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "employee"
+    "covid"
 })
 @XmlRootElement(name = "getCovidResponse", namespace = "http://innova.com/models/soap/emp")
 public class GetCovidResponse {
 
     @XmlElement(namespace = "http://innova.com/models/soap/emp", required = true)
-    protected Covid employee;
+    protected Covid covid;
 
     /**
-     * Ruft den Wert der employee-Eigenschaft ab.
+     * Ruft den Wert der covid-Eigenschaft ab.
      * 
      * @return
      *     possible object is
      *     {@link Covid }
      *     
      */
-    public Covid getEmployee() {
-        return employee;
+    public Covid getCovid() {
+        return covid;
     }
 
     /**
-     * Legt den Wert der employee-Eigenschaft fest.
+     * Legt den Wert der covid-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
      *     {@link Covid }
      *     
      */
-    public void setEmployee(Covid value) {
-        this.employee = value;
+    public void setCovid(Covid value) {
+        this.covid = value;
     }
 
 }

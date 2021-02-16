@@ -22,7 +22,7 @@ public class CovidSoapEndpoint {
     @ResponsePayload
     public GetCovidResponse getCovid(@RequestPayload GetCovidRequest request) {
         GetCovidResponse response = new GetCovidResponse();
-        response.setEmployee(covidSoapRepository.findEmployee(request.getNDays(), request.getInfo(), request.getRValue()));
+        response.setCovid(covidSoapRepository.findEmployee(request.getNDays(), request.getInfo(), request.getRValue()));
         return response;
     }
 }
