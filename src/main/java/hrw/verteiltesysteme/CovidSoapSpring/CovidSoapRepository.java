@@ -14,7 +14,7 @@ public class CovidSoapRepository {
 
 
     //nDays und rValue kann Null sein
-    public Covid findEmployee(int nDays, String info, int rValue) {
+    public Covid findCovid(int nDays, String info, int rValue) {
         CalculateCovidNumber calculateCovidNumber = new CalculateCovidNumber(new RKI().getRKICovidInfo(), new JHU().getJHUCovidInfo());
         Covid covid;
         switch (info) {
@@ -32,12 +32,11 @@ public class CovidSoapRepository {
                 return covid;
             case "/increase":
                 covid = new Covid();
-                //muss behoben werden
                 covid.setJsonInfo(calculateCovidNumber.getIncreaseLasteDayJHU()+"");
             return covid;
             case "/average":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getAverageIncreaseDayJHU(7)+"");
+                covid.setJsonInfo(calculateCovidNumber.getAverageIncreaseDayJHU(nDays)+"");
                 return covid;
             case "/incidencevalue":
                 covid = new Covid();
@@ -45,11 +44,11 @@ public class CovidSoapRepository {
                 return covid;
             case "/incidencegoal":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getTotalTargetInfectionRKI(35)+"");
+                covid.setJsonInfo(calculateCovidNumber.getTotalTargetInfectionRKI(rValue)+"");
                 return covid;
             case "/days":
                 covid = new Covid();
-                covid.setJsonInfo(calculateCovidNumber.getTargetIncidenceForRWerthRKI(35,calculateCovidNumber.getTotalInfectionsJHU(),7)+"");
+                covid.setJsonInfo(calculateCovidNumber.getTargetIncidenceForRWerthRKI(rValue,calculateCovidNumber.getTotalInfectionsJHU(),nDays)+"");
                 return covid;
 
             default:

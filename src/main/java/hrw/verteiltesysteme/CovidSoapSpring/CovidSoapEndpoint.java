@@ -11,6 +11,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 @Endpoint
 public class CovidSoapEndpoint {
     private static final String NAMESPACE_URI = "http://innova.com/models/soap/emp";
+
     private CovidSoapRepository covidSoapRepository;
 
     @Autowired
@@ -22,7 +23,7 @@ public class CovidSoapEndpoint {
     @ResponsePayload
     public GetCovidResponse getCovid(@RequestPayload GetCovidRequest request) {
         GetCovidResponse response = new GetCovidResponse();
-        response.setCovid(covidSoapRepository.findEmployee(request.getNDays(), request.getInfo(), request.getRValue()));
+        response.setCovid(covidSoapRepository.findCovid(request.getNDays(), request.getInfo(), request.getRValue()));
         return response;
     }
 }
